@@ -1,0 +1,61 @@
+/* Tắt mọi định dạng mặc định của trình duyệt */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Nền tím xanh hiện đại */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    width: 95%;
+    max-width: 800px;
+}
+
+/* Biến danh sách thành bảng */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    text-align: left;
+    color: #888;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+td {
+    padding: 15px 10px;
+    border-bottom: 1px solid #f1f1f1;
+    vertical-align: middle;
+}
+
+/* Nút bấm */
+.btn {
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn-lock { background: #ff4757; color: white; }
+.btn-restore { background: #2ed573; color: white; }
+.btn:hover { opacity: 0.8; transform: translateY(-2px); }
+
+/* Trạng thái */
+.status-active { color: #2ed573; font-weight: bold; }
+.status-locked { color: #ff4757; font-weight: bold; }

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Trang Quản Trị{% endblock %}
+
+{% block content %}
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+    <h2 style="color: #333;">Danh sách thành viên</h2>
+    <a href="/dashboard" class="btn" style="background: #6c757d; color: white; padding: 8px 15px;">← Quay lại</a>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>STT</th> <th>Tên người dùng</th>
+            <th>Trạng thái</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+        <tr>
+            <td>#{{ loop.index }}</td> 
+            
+            <td>
+                <strong>{{ user.username }}</strong>
+                {% if user.username == session['username'] %}
+                    <span style="background: #eee; padding: 2px 8px; border-radius: 10px; font-size: 0.7em; margin-left: 5px;">Bạn</span>
+                {% endif %}
+            </td>
+            <td>
+                {% if user.status == 1 %}
+                    <span style="display: flex; align-items: center; gap: 8px; color: #26de81; font-weight: 600;">
+                        <span style="width: 8px; height: 8px; background: #26de81; border-radius: 50%;"></span> Hoạt động
+                    </span>
+                {% else %}
+                    <span style="display: flex; align-items: center; gap: 8px; color: #eb4d4b; font-weight: 600;">
+                        <span style="width: 8px; height: 8px; background: #eb4d4b; border-radius: 50%;"></span> Đã khóa
+                    </span>
+                {% endif %}
+            </td>
+            <td>
+                {% if user.username != session['username'] %}
+                    {% if user.status == 1 %}
+                        <a href="{{ url_for('lock_user', user_id=user.id) }}" class="btn btn-lock">Khóa tài khoản</a>
+                    {% else %}
+                        <a href="{{ url_for('restore_user', user_id=user.id) }}" class="btn btn-restore">Khôi phục</a>
+                    {% endif %}
+                {% else %}
+                    <span style="color: #ccc; font-style: italic;">Hệ thống bảo vệ</span>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Chào mừng - Hệ thống Quản lý{% endblock %}
+
+{% block content %}
+<div style="text-align: center; padding: 40px 20px;">
+    <div style="width: 80px; height: 80px; background: linear-gradient(to right, #4facfe, #00f2fe); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(79, 172, 254, 0.3);">
+        <svg viewBox="0 0 24 24" width="40" height="40" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+    </div>
+
+    <h1 style="font-size: 2.5rem; color: #333; margin-bottom: 10px; font-weight: 600;">
+        Hệ Thống Quản Lý Tài Khoản Người Dùng
+    </h1>
+    
+    <p style="color: #666; font-size: 1.1rem; margin-bottom: 40px; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+        Chào mừng bạn đến với nền tảng quản trị thông minh. Vui lòng đăng nhập để bắt đầu phiên làm việc hoặc đăng ký tài khoản mới.
+    </p>
+
+    <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+        <a href="/login" class="btn" style="background: linear-gradient(to right, #4facfe, #00f2fe); padding: 15px 40px; font-size: 1rem; min-width: 150px; text-align: center;">
+            Đăng Nhập
+        </a>
+        
+        <a href="/register" class="btn" style="background: white; color: #4facfe; border: 2px solid #4facfe; padding: 13px 40px; font-size: 1rem; min-width: 150px; text-align: center;"
+           onmouseover="this.style.background='#4facfe'; this.style.color='white';"
+           onmouseout="this.style.background='white'; this.style.color='#4facfe';">
+            Đăng Ký
+        </a>
+    </div>
+
+    <div style="margin-top: 60px; border-top: 1px solid #eee; padding-top: 20px; color: #999; font-size: 0.9rem;">
+        &copy; 2026 Quản Lý Người Dùng. All rights reserved.
+    </div>
+</div>
+{% endblock %}

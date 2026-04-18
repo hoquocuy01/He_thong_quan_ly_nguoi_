@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Đăng nhập - Hệ thống{% endblock %}
+
+{% block content %}
+<div style="max-width: 400px; margin: 0 auto; padding: 20px;">
+    <h2 style="text-align: center; margin-bottom: 30px; font-weight: 600; color: #333;">
+        Đăng Nhập
+    </h2>
+
+    <form action="/login" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+        <div style="display: flex; flex-direction: column;">
+            <label style="font-size: 14px; color: #666; margin-bottom: 5px;">
+                Tên đăng nhập:
+            </label>
+            <input type="text" 
+                   name="username" 
+                   required 
+                   placeholder="Nhập username của bạn..."
+                   style="padding: 12px 15px; border-radius: 10px; border: 1px solid #ddd; outline: none; transition: 0.3s;"
+                   onfocus="this.style.borderColor='#4facfe'; this.style.boxShadow='0 0 10px rgba(79, 172, 254, 0.2)';"
+                   onblur="this.style.borderColor='#ddd'; this.style.boxShadow='none';">
+        </div>
+
+        <div style="display: flex; flex-direction: column;">
+            <label style="font-size: 14px; color: #666; margin-bottom: 5px;">
+                Mật khẩu:
+            </label>
+            <input type="password" 
+                   name="password" 
+                   required 
+                   placeholder="Nhập mật khẩu..."
+                   style="padding: 12px 15px; border-radius: 10px; border: 1px solid #ddd; outline: none; transition: 0.3s;"
+                   onfocus="this.style.borderColor='#4facfe'; this.style.boxShadow='0 0 10px rgba(79, 172, 254, 0.2)';"
+                   onblur="this.style.borderColor='#ddd'; this.style.boxShadow='none';">
+        </div>
+
+        <button type="submit" 
+                class="btn" 
+                style="background: linear-gradient(to right, #4facfe, #00f2fe); width: 100%; margin-top: 15px; border-radius: 30px; border: none; font-weight: 600;">
+            Đăng Nhập
+        </button>
+    </form>
+
+    <div style="text-align: center; margin-top: 25px; font-size: 14px; color: #888;">
+        Chưa có tài khoản? 
+        <a href="/register" style="color: #4facfe; text-decoration: none; font-weight: 500; transition: 0.3s;"
+           onmouseover="this.style.textDecoration='underline'; this.style.color='#00f2fe';"
+           onmouseout="this.style.textDecoration='none'; this.style.color='#4facfe';">
+            Đăng ký ngay
+        </a>
+    </div>
+</div>
+{% endblock %}
