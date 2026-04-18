@@ -25,3 +25,4 @@
 - Giao diện kính mờ (Glassmorphism) đồng bộ.
 - Admin có quyền Khóa/Mở khóa người dùng tức thì.
 - Chế độ bảo vệ tài khoản đang đăng nhập.
+<img width="1387" height="881" alt="hethong1" src="https://github.com/user-attachments/assets/9be86492-d6b5-466b-a8c7-d670c37f1ef7" />
